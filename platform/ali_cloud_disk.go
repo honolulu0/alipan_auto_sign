@@ -38,7 +38,7 @@ func (AliCloudDisk *AliCloudDisk) getAccessToken(refreshToken string) (string, e
 	if accessToken, ok := resMap["access_token"].(string); ok {
 		return accessToken, nil
 	}
-	return "", errors.New("refreshToken过期,请更改后重试")
+	return "", errors.New(refreshToken+"refreshToken过期,请更改后重试")
 }
 
 func (AliCloudDisk *AliCloudDisk) signIn(accessToken string) (string, error) {
