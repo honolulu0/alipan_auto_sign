@@ -13,6 +13,7 @@ type PushPlus struct {
 }
 
 func (PushPlus *PushPlus) Run(pushPlusToken string, title string, content string) {
+	fmt.Println("微信推送"+pushPlusToken)
 	url := "http://www.pushplus.plus/send/"
 	var dataMap = make(map[string]string)
 	dataMap["token"] = pushPlusToken
